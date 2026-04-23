@@ -20,7 +20,7 @@ const firebaseConfig = {
   projectId: "MY_PROJECT_ID",
   storageBucket: "MY_STORAGE_BUCKET",
   messagingSenderId: "MY_MESSAGING_SENDER_ID",
-  appId: "MY_APP_ID"
+  appId: "MY_APP_ID"w
 };
 
 const app = initializeApp(firebaseConfig);

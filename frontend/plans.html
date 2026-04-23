@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌸 Plans — FitPulse</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar__inner">
+    <a href="index.html" class="navbar__logo">🌸 FitPulse</a>
+    <div class="navbar__links">
+      <a href="dashboard.html" class="navbar__link">Dashboard</a>
+      <a href="calories.html" class="navbar__link">Calories</a>
+      <a href="health.html" class="navbar__link">Health Stats</a>
+      <a href="plans.html" class="navbar__link active">Plans</a>
+      <a href="workouts.html" class="navbar__link">Workouts</a>
+    </div>
+    <div class="navbar__actions"><div class="avatar">SJ</div></div>
+  </div>
+</nav>
+<div class="container">
+  <header class="page-header"><p class="label">Fitness & Diet Plans</p><h1>Find your perfect <em>programme</em></h1></header>
+  <div class="card active-plan-card" id="activePlanCard" style="margin-bottom:24px;background:linear-gradient(135deg,#FFE4EC,white);display:none;"><div style="display:flex;justify-content:space-between;align-items:center"><div><span class="badge" style="background:#DB2777;color:white;padding:4px 12px;border-radius:40px;">Active plan</span><h3 style="margin:8px 0" id="activePlanName"></h3><p id="activePlanDetails"></p></div><button class="btn" id="continuePlanBtn" style="width:auto;">Continue →</button></div><div class="progress-bar" style="background:#FFE4EC;height:6px;margin-top:12px"><div class="progress-fill" id="activePlanProgress" style="width:0%;background:#DB2777;"></div></div></div>
+  <div class="plans-header-row"><h2>Browse All Plans</h2><div class="plans-filters" id="planFilters"></div></div>
+  <div class="plans-grid" id="plansGrid"></div>
+</div>
+<button class="chatbot-fab" id="chatbot-fab">💬</button>
+<div id="chatbot-panel" class="chatbot-panel"><div class="chat-header"><div class="avatar">AI</div><div><h4>🌸 FitBot Coach</h4><p>Plan recommendations</p></div></div><div class="chat-messages" id="chat-messages"><div class="chat-bubble chat-bubble--bot">Not sure which plan to pick? Tell me your goal!</div></div><div class="chat-input-row"><input type="text" id="chat-input" placeholder="Describe your goal…"><button class="chat-send" id="chat-send">➤</button></div></div>
+<script type="module" src="js/plans.js"></script>
+</body>
+</html>

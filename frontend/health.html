@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌸 Health Stats — FitPulse</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar__inner">
+    <a href="index.html" class="navbar__logo">🌸 FitPulse</a>
+    <div class="navbar__links">
+      <a href="dashboard.html" class="navbar__link">Dashboard</a>
+      <a href="calories.html" class="navbar__link">Calories</a>
+      <a href="health.html" class="navbar__link active">Health Stats</a>
+      <a href="plans.html" class="navbar__link">Plans</a>
+      <a href="workouts.html" class="navbar__link">Workouts</a>
+    </div>
+    <div class="navbar__actions"><div class="avatar">SJ</div></div>
+  </div>
+</nav>
+<div class="container">
+  <header class="page-header"><p class="label">Health Statistics</p><h1>Your Health <em>at a Glance</em></h1><p>Monitor key health markers and trends</p></header>
+  <div class="stat-row" id="topStats"></div>
+  <div class="health-grid" style="display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:24px;">
+    <div class="card"><h3>📉 Weight Trend</h3><div class="sparkline" id="weightChart"></div><div id="weightDetails" style="display:flex;justify-content:space-between;margin-top:12px"></div></div>
+    <div class="card"><h3>⚖️ Body Mass Index</h3><p>Height 168 cm · Weight 72.4 kg</p><p style="font-size:3rem;font-weight:800;color:var(--pink-dark)" id="bmiValue">24.1</p><span class="badge" style="background:#FFE4EC;padding:4px 12px;border-radius:40px;" id="bmiLabel">Healthy weight ✓</span></div>
+    <div class="card"><h3>❤️ Heart Rate</h3><p style="font-size:2rem;font-weight:800" id="hrValue">62 <span style="font-size:1rem;">bpm</span></p><p>Resting HR indicates excellent fitness</p><div class="progress-bar" style="background:#FFE4EC;height:6px;margin:8px 0"><div class="progress-fill" style="width:62%;background:#F472B6"></div></div></div>
+    <div class="card"><h3>😴 Sleep Quality</h3><div id="sleepBars"></div><div id="sleepSummary" style="display:flex;justify-content:space-between;margin-top:12px"></div></div>
+    <div class="card"><h3>🧬 Body Composition</h3><div style="display:flex;gap:16px"><div><p style="font-size:2rem" id="bodyFatPct">22%</p><p>Body Fat</p></div><div><p style="font-size:2rem" id="leanMassPct">78%</p><p>Lean Mass</p></div></div></div>
+    <div class="card"><h3>📝 Log Measurement</h3><select class="form-input" id="metricSelect" style="width:100%;padding:10px;border-radius:30px;margin:12px 0"><option>Weight (kg)</option><option>Body Fat %</option><option>Waist (cm)</option></select><input class="form-input" type="number" id="metricValue" placeholder="Value"><button class="btn" id="saveMetricBtn">Save Measurement</button></div>
+  </div>
+</div>
+<button class="chatbot-fab" id="chatbot-fab">💬</button>
+<div id="chatbot-panel" class="chatbot-panel"><div class="chat-header"><div class="avatar">AI</div><div><h4>🌸 FitBot Coach</h4><p>Health guidance</p></div></div><div class="chat-messages" id="chat-messages"><div class="chat-bubble chat-bubble--bot">Your stats look great! Any health questions? 💪</div></div><div class="chat-input-row"><input type="text" id="chat-input" placeholder="Ask about health…"><button class="chat-send" id="chat-send">➤</button></div></div>
+<script type="module" src="js/health.js"></script>
+</body>
+</html>

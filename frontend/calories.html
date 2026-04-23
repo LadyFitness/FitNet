@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌸 Calories — FitPulse</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar__inner">
+    <a href="index.html" class="navbar__logo">🌸 FitPulse</a>
+    <div class="navbar__links">
+      <a href="dashboard.html" class="navbar__link">Dashboard</a>
+      <a href="calories.html" class="navbar__link active">Calories</a>
+      <a href="health.html" class="navbar__link">Health Stats</a>
+      <a href="plans.html" class="navbar__link">Plans</a>
+      <a href="workouts.html" class="navbar__link">Workouts</a>
+    </div>
+    <div class="navbar__actions"><div class="avatar">SJ</div></div>
+  </div>
+</nav>
+<div class="container">
+  <header class="page-header"><p class="label">Nutrition</p><h1>Calorie &amp; <em>Macro Tracker</em></h1><p>Log your meals, track macros, stay on target</p></header>
+  <div class="calories-layout" style="display:grid; grid-template-columns:1fr 360px; gap:24px;">
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <div class="card" style="display:flex;justify-content:space-between;align-items:center"><button class="btn btn--outline btn--sm" id="prevDayBtn">← Prev</button><strong id="dateLabel"></strong><button class="btn btn--outline btn--sm" id="nextDayBtn">Next →</button></div>
+      <div class="card"><h3>🌸 Log a Food</h3><div style="display:grid;grid-template-columns:1fr 80px 80px auto;gap:10px;align-items:end"><div class="form-group"><label class="form-label">Food name</label><input class="form-input" id="foodName" list="foodSuggestions"></div><div class="form-group"><label class="form-label">Kcal</label><input class="form-input" id="foodCals" type="number"></div><div class="form-group"><label class="form-label">Meal</label><select class="form-input" id="foodMeal"><option>Breakfast</option><option>Lunch</option><option>Dinner</option><option>Snacks</option></select></div><button class="btn btn--primary" id="addFoodBtn">+ Add</button></div><datalist id="foodSuggestions"><option>Chicken breast (100g)</option><option>Brown rice (1 cup)</option><option>Greek yogurt (150g)</option><option>Banana</option><option>Oats (50g)</option><option>Eggs (2 large)</option></datalist></div>
+      <div class="card"><h3>📝 Today's Food Log</h3><div id="foodLog"><div class="food-log-section"><h4>Breakfast <span id="breakfastTotal">0 kcal</span></h4><div id="breakfast-items"></div></div><div class="food-log-section"><h4>Lunch <span id="lunchTotal">0 kcal</span></h4><div id="lunch-items"></div></div><div class="food-log-section"><h4>Dinner <span id="dinnerTotal">0 kcal</span></h4><div id="dinner-items"></div></div><div class="food-log-section"><h4>Snacks <span id="snacksTotal">0 kcal</span></h4><div id="snacks-items"></div></div></div></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <div class="card" style="text-align:center"><h3>🎀 Calorie Budget</h3><div class="calorie-gauge"><svg width="180" height="180" viewBox="0 0 180 180"><circle cx="90" cy="90" r="76" fill="none" stroke="#FFE4EC" stroke-width="14"/><circle id="calorieRing" cx="90" cy="90" r="76" fill="none" stroke="url(#pinkGrad)" stroke-width="14" stroke-linecap="round" stroke-dasharray="477.5" stroke-dashoffset="477.5" transform="rotate(-90 90 90)"/><defs><linearGradient id="pinkGrad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#F472B6"/><stop offset="100%" stop-color="#DB2777"/></linearGradient></defs></svg><div class="gauge-label"><span class="num" id="calConsumed">0</span><br/><span style="font-size:0.7rem;">kcal eaten</span><br/><span id="calRemaining">4000 left</span></div></div><div class="stat-row" id="calStats"></div></div>
+      <div class="card"><h3>🥑 Macros</h3><div class="macro-item"><div style="display:flex;justify-content:space-between"><span>Protein</span><span id="macroP">0 / 160 g</span></div><div class="progress-bar"><div class="progress-fill" id="pBar" style="width:0%"></div></div></div><div class="macro-item mt-2"><div style="display:flex;justify-content:space-between"><span>Carbs</span><span id="macroC">0 / 250 g</span></div><div class="progress-bar"><div class="progress-fill" id="cBar" style="width:0%"></div></div></div><div class="macro-item mt-2"><div style="display:flex;justify-content:space-between"><span>Fat</span><span id="macroF">0 / 65 g</span></div><div class="progress-bar"><div class="progress-fill" id="fBar" style="width:0%"></div></div></div></div>
+      <div class="card"><h3>💧 Water Intake</h3><div style="display:flex;gap:12px;align-items:center"><p style="font-size:2rem;font-weight:700" id="waterAmt">1.8 L</p><p>of 2.5 L goal</p></div><div class="progress-bar"><div class="progress-fill" id="waterFill" style="width:72%"></div></div><div style="display:flex;gap:8px;margin-top:12px"><button class="btn btn--outline btn--sm water-add" data-ml="250">+250ml</button><button class="btn btn--outline btn--sm water-add" data-ml="500">+500ml</button><button class="btn btn--outline btn--sm water-add" data-ml="750">+750ml</button></div></div>
+    </div>
+  </div>
+</div>
+<button class="chatbot-fab" id="chatbot-fab">💬</button>
+<div id="chatbot-panel" class="chatbot-panel"><div class="chat-header"><div class="avatar">AI</div><div><h4>🌸 FitBot Coach</h4><p>Nutrition advice</p></div></div><div class="chat-messages" id="chat-messages"><div class="chat-bubble chat-bubble--bot">Track your meals here! Need suggestions for hitting your protein goal? 🥗</div></div><div class="chat-input-row"><input type="text" id="chat-input" placeholder="Ask about nutrition…"><button class="chat-send" id="chat-send">➤</button></div></div>
+<script type="module" src="js/calories.js"></script>
+</body>
+</html>

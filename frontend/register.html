@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌸 Create Account — FitPulse</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="auth-page">
+  <aside class="auth-visual">
+    <p style="font-size:1.5rem;font-weight:bold;">🌸 FitPulse</p>
+    <h1>Start your<br/>fitness journey<br/>today.</h1>
+    <p>Join thousands who've transformed their health.</p>
+    <div style="display:flex;gap:24px;margin-top:32px;"><div>48k+ users</div><div>2.1M workouts</div><div>94% hit goals</div></div>
+  </aside>
+  <section class="auth-form-side">
+    <div class="auth-card">
+      <h1 style="font-family:'Playfair Display';">Create account</h1>
+      <p>Start your free fitness journey</p>
+      <div id="alertMessage" class="alert"></div>
+      <form id="registerForm">
+        <div class="form-row" style="display:flex;gap:12px;">
+          <input class="form-input" type="text" id="firstName" placeholder="First name" required>
+          <input class="form-input" type="text" id="lastName" placeholder="Last name" required>
+        </div>
+        <input class="form-input" type="email" id="email" placeholder="Email" required>
+        <input class="form-input" type="password" id="password" placeholder="Password (min 8 chars)" required minlength="8">
+        <div class="form-row" style="display:flex;gap:12px;">
+          <input class="form-input" type="date" id="dob">
+          <select class="form-input" id="gender"><option>Female</option><option>Male</option></select>
+        </div>
+        <div class="form-row" style="display:flex;gap:12px;">
+          <input class="form-input" type="number" id="weight" placeholder="Weight (kg)">
+          <input class="form-input" type="number" id="height" placeholder="Height (cm)">
+        </div>
+        <select class="form-input" id="goal"><option>Lose weight</option><option>Build muscle</option><option>Improve fitness</option></select>
+        <button type="submit" class="btn">Create Account →</button>
+      </form>
+      <p style="text-align:center;margin-top:20px;">Already have an account? <a href="login.html" style="color:#DB2777;">Sign in</a></p>
+    </div>
+  </section>
+</div>
+<script type="module" src="js/register.js"></script>
+</body>
+</html>

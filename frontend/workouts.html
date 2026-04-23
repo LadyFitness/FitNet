@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌸 Workouts — FitPulse</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar__inner">
+    <a href="index.html" class="navbar__logo">🌸 FitPulse</a>
+    <div class="navbar__links">
+      <a href="dashboard.html" class="navbar__link">Dashboard</a>
+      <a href="calories.html" class="navbar__link">Calories</a>
+      <a href="health.html" class="navbar__link">Health Stats</a>
+      <a href="plans.html" class="navbar__link">Plans</a>
+      <a href="workouts.html" class="navbar__link active">Workouts</a>
+    </div>
+    <div class="navbar__actions"><div class="avatar">SJ</div></div>
+  </div>
+</nav>
+<div class="container">
+  <header class="page-header"><p class="label">Workouts</p><h1>Schedule &amp; log <em>sessions</em></h1></header>
+  <div class="workouts-layout" style="display:grid; grid-template-columns:1fr 360px; gap:24px;">
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <div class="card"><h3>📅 Schedule a Workout</h3><form id="scheduleForm"><select class="form-input" id="wType" required><option>Strength Training</option><option>HIIT</option><option>Cardio</option><option>Yoga</option></select><input class="form-input" type="number" id="wDuration" placeholder="Duration (min)" required><input class="form-input" type="date" id="wDate" required><input class="form-input" type="time" id="wTime" required><textarea class="form-textarea" id="wNotes" placeholder="Notes..."></textarea><button type="submit" class="btn">Schedule Workout →</button></form></div>
+      <div class="card"><h3>📌 Upcoming Workouts</h3><div id="upcomingList"></div></div>
+      <div class="card"><h3>🏆 Personal Bests</h3><div id="personalBests"></div></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <div class="card"><h3>⚡ Quick Log</h3><select class="form-input" id="qActivity"><option>Running</option><option>Cycling</option><option>Strength</option></select><input class="form-input" type="number" id="qDur" placeholder="Duration (min)"><input class="form-input" type="number" id="qCal" placeholder="Kcal burned"><button class="btn" id="quickLogBtn">Log Workout →</button></div>
+      <div class="card"><h3>📊 This Week</h3><div class="stat-row" id="weekStats"></div></div>
+    </div>
+  </div>
+</div>
+<button class="chatbot-fab" id="chatbot-fab">💬</button>
+<div id="chatbot-panel" class="chatbot-panel"><div class="chat-header"><div class="avatar">AI</div><div><h4>🌸 FitBot Coach</h4><p>Workout advice</p></div></div><div class="chat-messages" id="chat-messages"><div class="chat-bubble chat-bubble--bot">Need workout ideas? Ask me! 🏋️</div></div><div class="chat-input-row"><input type="text" id="chat-input" placeholder="Ask about workouts…"><button class="chat-send" id="chat-send">➤</button></div></div>
+<script type="module" src="js/workouts.js"></script>
+</body>
+</html>

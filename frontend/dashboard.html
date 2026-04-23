@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌸 Dashboard — FitPulse</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar__inner">
+    <a href="index.html" class="navbar__logo">🌸 FitPulse</a>
+    <div class="navbar__links">
+      <a href="dashboard.html" class="navbar__link active">Dashboard</a>
+      <a href="calories.html" class="navbar__link">Calories</a>
+      <a href="health.html" class="navbar__link">Health Stats</a>
+      <a href="plans.html" class="navbar__link">Plans</a>
+      <a href="workouts.html" class="navbar__link">Workouts</a>
+    </div>
+    <div class="navbar__actions">
+      <button id="notifBell" style="background:none;border:none;cursor:pointer;font-size:1.3rem;position:relative">🔔 <span id="notif-badge" style="position:absolute;top:-4px;right:-8px;background:#F472B6;color:#fff;font-size:0.6rem;border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center">3</span></button>
+      <div class="avatar" id="userAvatar">SJ</div>
+    </div>
+  </div>
+</nav>
+
+<div class="dashboard-layout">
+  <aside class="sidebar">
+    <div class="sidebar__user">
+      <div class="avatar">SJ</div>
+      <div><p class="sidebar__user-name" id="userName">Sarah Johnson</p><p class="sidebar__user-role">🌸 Lose weight goal</p></div>
+    </div>
+    <nav class="sidebar__nav">
+      <p class="sidebar__section-label">Main</p>
+      <a href="dashboard.html" class="sidebar__link active"><span>🏠</span> Dashboard</a>
+      <a href="calories.html" class="sidebar__link"><span>🔥</span> Calories</a>
+      <a href="health.html" class="sidebar__link"><span>❤️</span> Health Stats</a>
+      <a href="workouts.html" class="sidebar__link"><span>🏋️</span> Workouts <span class="sidebar__badge">New</span></a>
+      <p class="sidebar__section-label">Explore</p>
+      <a href="plans.html" class="sidebar__link"><span>📋</span> Plans & Programmes</a>
+      <a href="workouts.html" class="sidebar__link"><span>📅</span> Schedule</a>
+      <p class="sidebar__section-label">Account</p>
+      <a href="#" id="signOutLink" class="sidebar__link"><span>🚪</span> Sign Out</a>
+    </nav>
+  </aside>
+
+  <main class="dashboard-main">
+    <div class="greeting-pink"><h1>Good morning, <span id="greetingName">Sarah</span> 👋</h1><p>Tuesday 24 June · You're on a <strong style="color:var(--pink-dark)">7-day streak</strong> — keep it up!</p></div>
+    <div class="metrics-strip"><div class="metric-card highlight"><span>🔥</span><p class="metric-label">Calories Today</p><p class="metric-num">1,847</p><p class="metric-change up">↑ 2,153 kcal left</p></div><div class="metric-card"><span>👟</span><p class="metric-label">Steps</p><p class="metric-num">8,241</p><p class="metric-change up">↑ 82% of goal</p></div><div class="metric-card"><span>⚖️</span><p class="metric-label">Current Weight</p><p class="metric-num">72.4 <small>kg</small></p><p class="metric-change up" style="color:#0D6E3F">↓ 1.6 kg this month</p></div><div class="metric-card"><span>💧</span><p class="metric-label">Water</p><p class="metric-num">1.8 <small>L</small></p><p class="metric-change down">↓ 0.7 L remaining</p></div></div>
+    <div class="dashboard-grid">
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <div class="card"><h3>Weekly Activity</h3><p style="font-size:0.8rem;color:var(--text-muted)">Calories burned per day</p><div class="week-chart" id="weekChart"></div><div style="display:flex;justify-content:space-between;font-size:0.7rem;"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div></div>
+        <div class="card"><div style="display:flex;justify-content:space-between;"><h3>My Goals</h3><button class="btn btn--outline btn--sm" id="addGoalBtn">+ Add Goal</button></div><ul id="goalsList"><li class="goal-item"><div class="goal-item__top"><span>🎯 Lose 5 kg</span><span>68%</span></div><div class="progress-bar"><div class="progress-fill" style="width:68%"></div></div><small>3.4 kg lost · Due Aug 2025</small></li><li class="goal-item"><div class="goal-item__top"><span>🏃 Run 5 km</span><span>90%</span></div><div class="progress-bar"><div class="progress-fill" style="width:90%"></div></div><small>Current best: 4.5 km</small></li><li class="goal-item"><div class="goal-item__top"><span>💧 Drink 2.5 L</span><span>72%</span></div><div class="progress-bar"><div class="progress-fill" style="width:72%"></div></div><small>1.8 L today</small></li></ul></div>
+        <div class="card"><h3>Recent Activity</h3><div class="activity-feed"><div class="activity-item"><div>🏃</div><div><strong>Morning Run</strong><br/>5.2 km · 32 min · 348 kcal</div><span style="margin-left:auto;font-size:0.7rem;">Today 7:15am</span></div><div class="activity-item"><div>🏋️</div><div><strong>Upper Body Strength</strong><br/>45 min · 210 kcal</div><span style="margin-left:auto;font-size:0.7rem;">Yesterday</span></div></div></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <div class="card"><h3>Today's Macros</h3><div><div style="display:flex;justify-content:space-between;"><span>Protein</span><span>142 / 160 g</span></div><div class="progress-bar"><div class="progress-fill" style="width:89%"></div></div></div><div class="mt-2"><div style="display:flex;justify-content:space-between;"><span>Carbs</span><span>180 / 250 g</span></div><div class="progress-bar"><div class="progress-fill" style="width:72%"></div></div></div><div class="mt-2"><div style="display:flex;justify-content:space-between;"><span>Fat</span><span>48 / 65 g</span></div><div class="progress-bar"><div class="progress-fill" style="width:74%"></div></div></div></div>
+        <div class="card"><h3>Notifications</h3><div class="notif-item"><div class="notif-dot2"></div><div><strong>🏆 Goal milestone reached!</strong><br/>You've lost 3 kg — halfway!</div></div><div class="notif-item"><div class="notif-dot2"></div><div><strong>💧 Hydration reminder</strong><br/>Only 1.8 L today. Drink up!</div></div><div class="notif-item"><div class="notif-dot2"></div><div><strong>📋 New plan available</strong><br/>Summer Shred programme launched.</div></div></div>
+        <div class="card"><h3>Scheduled Workouts</h3><div style="display:flex;gap:12px;background:#FFF0F5;border-radius:18px;padding:12px;"><div style="background:#F472B6;border-radius:16px;padding:6px 12px;color:white;">WED<br/>25</div><div><strong>HIIT Cardio Blast</strong><br/>30 min · 7:00 am</div></div><div style="display:flex;gap:12px;margin-top:12px;background:#FFF0F5;border-radius:18px;padding:12px;"><div style="background:#F9A8D4;border-radius:16px;padding:6px 12px;">FRI<br/>27</div><div><strong>Lower Body Strength</strong><br/>45 min · 6:30 am</div></div></div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<div id="goalModal" class="modal"><div class="modal-content"><h3>🌸 Add New Goal</h3><input type="text" id="newGoalName" placeholder="e.g. Meditate daily" style="width:100%;padding:10px;margin:12px 0;border-radius:40px;border:1px solid #FBCFE8;"><div style="display:flex;gap:10px;"><button class="btn btn--outline" id="cancelGoalBtn">Cancel</button><button class="btn btn--primary" id="confirmGoalBtn">Add Goal</button></div></div></div>
+
+<button class="chatbot-fab" id="chatbot-fab">💬</button>
+<div id="chatbot-panel" class="chatbot-panel">
+  <div class="chat-header"><div class="avatar">AI</div><div><h4>🌸 FitBot Coach</h4><p>Ask me anything</p></div></div>
+  <div class="chat-messages" id="chat-messages"><div class="chat-bubble chat-bubble--bot">Hi Sarah! You're on a 7-day streak 🔥 What can I help you with?</div></div>
+  <div class="chat-input-row"><input type="text" id="chat-input" placeholder="Ask your coach…"><button class="chat-send" id="chat-send">➤</button></div>
+</div>
+
+<script type="module" src="js/dashboard.js"></script>
+</body>
+</html>
